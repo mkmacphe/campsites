@@ -90,10 +90,13 @@ public class board {
             for (Integer j = 0; j < gridsize; j++) {
                 if(i > 0 && i < gridsize-1
                         && j > 0 && j < gridsize-1) {
-                    System.out.printf(tiles[i][j].getLabel().name() + " ");
+                    System.out.printf(tiles[i][j].getTileLabel().name() + " ");
                 }
             }
             System.out.println();
         }
+    }
+    public tile[][] getTiles(){
+        return(tiles);
     }
 }
