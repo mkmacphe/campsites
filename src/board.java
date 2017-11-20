@@ -99,4 +99,5 @@ public class board {
     public tile[][] getTiles(){
         return(tiles);
     }
+    public Integer getSize(){return (gridsize - 2);}
 }
