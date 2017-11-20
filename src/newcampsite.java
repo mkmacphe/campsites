@@ -6,6 +6,7 @@ public class newcampsite{
     private JFrame frame;
     public newcampsite(Integer size){
         this.size = size;
+        this.frame = new JFrame("Campsites");
         campsiteboard = new board(size);
         frame.add(new boardview(campsiteboard));
         frame.setVisible(true);
