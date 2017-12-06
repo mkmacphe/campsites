@@ -1,19 +1,23 @@
 import javax.swing.*;
-import java.awt.BorderLayout;
+import java.awt.*;
 
 public class newcampsite{
     private Integer size;
     private board campsiteboard;
+    private JPanel panel;
     private JFrame frame;
     public newcampsite(Integer size){
         this.size = size;
-        this.frame = new JFrame("Campsites");
-        frame.setBounds(100, 100, 500, 500);
-        frame.setLayout(new BorderLayout());
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.panel = new JPanel();
+        panel.setLayout(new GridLayout(1,2));
         campsiteboard = new board(size);
-        frame.add(new boardview(campsiteboard));
-        /*frame.add(new rightcolumnview(new rightcolumn(campsiteboard)));*/
+        panel.add(new boardview(campsiteboard));
+        panel.add(new rightcolumnview(new rightcolumn(campsiteboard)));
+        this.frame = new JFrame("Campsites");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        /*frame.setBounds(100, 100, 500, 500);*/
+        frame.setContentPane(panel);
+        frame.pack();
         frame.setVisible(true);
     }
 
